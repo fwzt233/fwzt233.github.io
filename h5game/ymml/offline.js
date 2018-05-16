@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1526381815,
+	"version": 1526470623,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -26,7 +26,8 @@
 		"images/t_juqing_ok.png",
 		"images/pw_bg-sheet0.png",
 		"images/title-sheet0.png",
-		"images/ad_text-sheet0.png",
+		"images/ad-sheet0.png",
+		"images/ad_text.png",
 		"media/book1.ogg",
 		"media/key.ogg",
 		"media/open1.ogg",
