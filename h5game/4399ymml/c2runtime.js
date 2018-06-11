@@ -18445,7 +18445,7 @@ cr.plugins_.H5API = function (runtime) {
 	var typeProto = pluginProto.Type.prototype;
 	typeProto.onCreate = function () {
 		var element = document.createElement("script");
-		element.setAttribute("src", "http://h.api.4399.com/h5mini-2.0/h5api.php");
+		element.setAttribute("src", "http://h.api.4399.com/h5mini-2.0/h5api-interface.php");
 		document.getElementsByTagName('head')[0].appendChild(element);
 	};
 	pluginProto.Instance = function (type) {

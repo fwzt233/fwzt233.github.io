@@ -18433,6 +18433,115 @@ cr.plugins_.Function = function(runtime)
 }());
 ;
 ;
+cr.plugins_.H5API = function (runtime) {
+	this.runtime = runtime;
+};
+(function () {
+	var pluginProto = cr.plugins_.H5API.prototype;
+	pluginProto.Type = function (plugin) {
+		this.plugin = plugin;
+		this.runtime = plugin.runtime;
+	};
+	var typeProto = pluginProto.Type.prototype;
+	typeProto.onCreate = function () {
+		var element = document.createElement("script");
+		element.setAttribute("src", "http://h.api.4399.com/h5mini-2.0/h5api-interface.php");
+		document.getElementsByTagName('head')[0].appendChild(element);
+	};
+	pluginProto.Instance = function (type) {
+		this.type = type;
+		this.runtime = type.runtime;
+	};
+	var instanceProto = pluginProto.Instance.prototype;
+	instanceProto.onCreate = function () {
+	};
+	instanceProto.onDestroy = function () {};
+	instanceProto.saveToJSON = function () {
+		return {
+		};
+	};
+	instanceProto.loadFromJSON = function (o) {
+	};
+	instanceProto.draw = function (ctx) {};
+	instanceProto.drawGL = function (glw) {};
+	function Cnds() {};
+	Cnds.prototype.canPlayAd = function () {
+		return h5api.canPlayAd();
+	};
+	Cnds.prototype.submitScoreComplete = function () {
+		return true;
+	};
+	Cnds.prototype.getRankComplete = function () {
+		return true;
+	};
+	Cnds.prototype.playAdCallback = function () {
+		return true;
+	};
+	pluginProto.cnds = new Cnds();
+	function Acts() {};
+	Acts.prototype.progress = function (num) {
+		h5api.progress(num);
+	};
+	Acts.prototype.submitScore = function (score) {
+		h5api.submitScore(score, callback, this);
+		var self = this;
+		function callback(obj) {
+			if (obj.code == 10000) {
+				console.log("上传成功");
+				self.runtime.trigger(cr.plugins_.H5API.prototype.cnds.submitScoreComplete, self);
+			} else {
+				console.log("上传失败");
+			}
+		}
+	};
+	var rankData = "";
+	Acts.prototype.getRank = function () {
+		h5api.getRank(callback, this);
+		var self = this;
+		function callback(obj) {
+			if (obj.code == 10000) {
+				console.log("获取成功");
+				var data = obj.data;
+				var dataStr = "";
+				for (var i = 0; i < data.length; i++) {
+					console.log("积分:" + data[i].score + ",排名:" + data[i].rank);
+					dataStr += dataStr === "" ? "" : ",";
+					dataStr += "[[" + data[i].rank + "],[" + data[i].score + "]]";
+				}
+				rankData = "{\"c2array\":true,\"size\":[" + data.length + ",2,1],\"data\":[" + dataStr + "]}";
+				console.log(rankData);
+				self.runtime.trigger(cr.plugins_.H5API.prototype.cnds.getRankComplete, self);
+			} else {
+				console.log("获取失败");
+			}
+		}
+	};
+	var adState = "";
+	Acts.prototype.playAd = function () {
+		var self = this;
+		h5api.playAd(function(obj){
+			adState = obj.code;
+			self.runtime.trigger(cr.plugins_.H5API.prototype.cnds.playAdCallback, self);
+		});
+	};
+	pluginProto.acts = new Acts();
+	function Exps() {};
+	Exps.prototype.canPlayAd = function (ret) // 'ret' must always be the first parameter - always return the expression's result through it!
+	{
+		ret.set_any(h5api.canPlayAd()); // return our value
+	};
+	Exps.prototype.getRankData = function (ret) // 'ret' must always be the first parameter - always return the expression's result through it!
+	{
+		ret.set_string(rankData); // return our value
+	};
+	Exps.prototype.getAdState = function (ret) // 'ret' must always be the first parameter - always return the expression's result through it!
+	{
+		ret.set_string(adState); // return our value
+	};
+	pluginProto.exps = new Exps();
+}());
+;
+;
 var localForageInitFailed = false;
 try {
 /*!
@@ -24472,6 +24581,7 @@ cr.behaviors.Rex_text_typing = function (runtime) {
 cr.getObjectRefTable = function () { return [
 	cr.plugins_.Audio,
 	cr.plugins_.Function,
+	cr.plugins_.H5API,
 	cr.plugins_.LocalStorage,
 	cr.plugins_.Rex_Date,
 	cr.plugins_.Rex_TimeLine,
@@ -24514,9 +24624,22 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Text.prototype.acts.SubInstanceVar,
 	cr.plugins_.Text.prototype.acts.AddInstanceVar,
 	cr.plugins_.Sprite.prototype.acts.AddInstanceVar,
+	cr.system_object.prototype.cnds.OnLayoutStart,
+	cr.plugins_.H5API.prototype.cnds.canPlayAd,
+	cr.plugins_.Rex_Date.prototype.exps.Date,
+	cr.plugins_.Sprite.prototype.acts.SetAnimFrame,
+	cr.plugins_.H5API.prototype.acts.playAd,
+	cr.system_object.prototype.cnds.Compare,
+	cr.plugins_.H5API.prototype.exps.getAdState,
+	cr.system_object.prototype.acts.AddVar,
+	cr.plugins_.LocalStorage.prototype.acts.SetItem,
 	cr.plugins_.Touch.prototype.cnds.OnTouchEnd,
 	cr.plugins_.Spritefont2.prototype.acts.SetHAlign,
 	cr.behaviors.Rex_text_typing.prototype.acts.TypeText,
 	cr.behaviors.Rex_text_typing.prototype.cnds.OnTypingCompleted,
-	cr.system_object.prototype.cnds.OnLayoutStart
+	cr.plugins_.LocalStorage.prototype.acts.CheckItemExists,
+	cr.plugins_.LocalStorage.prototype.cnds.OnItemExists,
+	cr.plugins_.LocalStorage.prototype.acts.GetItem,
+	cr.plugins_.LocalStorage.prototype.cnds.OnItemGet,
+	cr.plugins_.LocalStorage.prototype.exps.ItemValue
 ];};

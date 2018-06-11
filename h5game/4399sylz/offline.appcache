@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1528687186
+#1528711327
 data.js
 c2runtime.js
 jquery-2.1.1.min.js
@@ -27,6 +27,8 @@ images/纸条内容-sheet0.png
 images/剧情文本.png
 images/按钮：确定-sheet0.png
 images/按钮：取消-sheet0.png
+images/按钮：提示-sheet0.png
+images/提示-sheet0.png
 images/房间1-sheet0.png
 images/房间1：密码箱-sheet0.png
 images/房间2-sheet0.png

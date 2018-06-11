@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1528687186,
+	"version": 1528711327,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -28,6 +28,8 @@
 		"images/剧情文本.png",
 		"images/按钮：确定-sheet0.png",
 		"images/按钮：取消-sheet0.png",
+		"images/按钮：提示-sheet0.png",
+		"images/提示-sheet0.png",
 		"images/房间1-sheet0.png",
 		"images/房间1：密码箱-sheet0.png",
 		"images/房间2-sheet0.png",
