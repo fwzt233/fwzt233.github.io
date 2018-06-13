@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eventSheets layout="GameOver" previous="" next="" version="2.2">
+  <item type="instance" UID="86"/>
+  <item type="instance" UID="83"/>
+  <item type="variable" variableName="Num" variableType="number" initValue="0"/>
+  <item type="variable" variableName="IsMakeBlock" variableType="number" initValue="1"/>
+  <item type="variable" variableName="IsPlayerJump" variableType="number" initValue="1"/>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonEndEvent" callName="onButtonEnd" isTrigger="true" target="BtnReplay"/>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22GamePlay%22" name="18"/>
+    </item>
+  </item>
+</eventSheets>
