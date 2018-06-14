@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1528982114,
+	"version": 1528986920,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -31,6 +31,12 @@
 		"images/item_clear-sheet0.png",
 		"images/tap_heal-sheet0.png",
 		"images/item_heal-sheet0.png",
+		"media/cancel1_hit.ogg",
+		"media/heal1_heal.ogg",
+		"media/jump1_catch.ogg",
+		"media/shop2_shop.ogg",
+		"media/skill1_clear.ogg",
+		"media/mattoglseby - 2_bgm.ogg",
 		"icon-16.png",
 		"icon-32.png",
 		"icon-114.png",
