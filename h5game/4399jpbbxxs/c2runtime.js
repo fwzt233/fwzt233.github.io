@@ -24057,6 +24057,8 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.LocalStorage.prototype.acts.ClearStorage,
 	cr.system_object.prototype.cnds.OnLayoutStart,
 	cr.plugins_.Audio.prototype.cnds.IsTagPlaying,
+	cr.plugins_.Audio.prototype.acts.Preload,
+	cr.plugins_.Audio.prototype.cnds.PreloadsComplete,
 	cr.plugins_.Sprite.prototype.cnds.CompareInstanceVar,
 	cr.plugins_.Sprite.prototype.acts.SetInstanceVar,
 	cr.system_object.prototype.cnds.Else,
