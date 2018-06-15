@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1528986920,
+	"version": 1529049048,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -19,6 +19,9 @@
 		"images/ui_gold-sheet0.png",
 		"images/ui_life.png",
 		"images/ui_cash-sheet0.png",
+		"images/plt_ad-sheet0.png",
+		"images/btn_ok-sheet0.png",
+		"images/btn_close-sheet0.png",
 		"images/bg_game.png",
 		"images/char_bear-sheet0.png",
 		"images/char_bear-sheet1.png",
@@ -31,6 +34,7 @@
 		"images/item_clear-sheet0.png",
 		"images/tap_heal-sheet0.png",
 		"images/item_heal-sheet0.png",
+		"images/readme-sheet0.png",
 		"media/cancel1_hit.ogg",
 		"media/heal1_heal.ogg",
 		"media/jump1_catch.ogg",
