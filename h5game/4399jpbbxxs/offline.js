@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1529110304,
+	"version": 1529112363,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -8,6 +8,7 @@
 		"images/btn_back-sheet0.png",
 		"images/btn_buy1-sheet0.png",
 		"images/btn_home-sheet0.png",
+		"images/btn_more_gold-sheet0.png",
 		"images/btn_rank-sheet0.png",
 		"images/btn_retry-sheet0.png",
 		"images/btn_shop-sheet0.png",
@@ -34,6 +35,7 @@
 		"images/tap_heal-sheet0.png",
 		"images/item_heal-sheet0.png",
 		"images/readme-sheet0.png",
+		"images/title-sheet0.png",
 		"media/cancel1_hit.ogg",
 		"media/heal1_heal.ogg",
 		"media/jump1_catch.ogg",
