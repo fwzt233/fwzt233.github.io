@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1529734564,
+	"version": 1530007947,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -23,6 +23,12 @@
 		"images/show_phone-sheet0.png",
 		"images/sf_nvl.png",
 		"images/btn_ok-sheet0.png",
+		"images/help-sheet0.png",
+		"images/help-sheet1.png",
+		"images/help-sheet2.png",
+		"images/btn_back-sheet0.png",
+		"images/btn_help-sheet0.png",
+		"images/btn_replay-sheet0.png",
 		"images/r2e1-sheet0.png",
 		"images/r2e2-sheet0.png",
 		"images/r2e3-sheet0.png",
