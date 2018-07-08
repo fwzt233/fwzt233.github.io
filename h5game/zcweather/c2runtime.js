@@ -22084,7 +22084,6 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.TextBox,
 	cr.system_object.prototype.cnds.OnLayoutStart,
 	cr.plugins_.TextBox.prototype.acts.SetFocus,
-	cr.plugins_.Audio.prototype.acts.Play,
 	cr.plugins_.Multiplayer.prototype.cnds.IsSupported,
 	cr.plugins_.Text.prototype.acts.SetText,
 	cr.plugins_.Text.prototype.acts.SetFontColor,
@@ -22128,6 +22127,7 @@ cr.getObjectRefTable = function () { return [
 	cr.plugins_.Multiplayer.prototype.cnds.OnPeerMessage,
 	cr.plugins_.Multiplayer.prototype.exps.FromAlias,
 	cr.plugins_.Multiplayer.prototype.exps.Message,
+	cr.plugins_.Audio.prototype.acts.Play,
 	cr.plugins_.Multiplayer.prototype.acts.HostBroadcastMessage,
 	cr.plugins_.Multiplayer.prototype.exps.FromID
 ];};
