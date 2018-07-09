@@ -1,9 +1,9 @@
 ﻿{
-	"name": "WCM-APP",
-	"short_name": "WCM-APP",
+	"name": "Multiplayer chat example",
+	"short_name": "Multiplayer chat example",
 	"start_url": "index.html",
 	"display": "fullscreen",
-	"orientation": "portrait",
+	"orientation": "any",
 	"icons": [{
 		"src": "icon-16.png",
 		"sizes": "16x16",
